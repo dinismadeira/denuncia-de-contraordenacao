@@ -89,3 +89,8 @@ quotebox {
     padding: 10px;
     display: block;
 }
+#disclaimer {
+    color: #dfdfe5;
+    font-size: x-small;
+    margin: 10px;   
+}
