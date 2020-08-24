@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Formulário Para Denúncia de Contraordenação</title>
+        <meta name="keywords" content="formulário,denuncia,queixa,estacionamento,contraordenação,contra,ordenação" />
+        <meta name="description" content="Formulário para denúncia de contraordenação ao abrigo do n.º 5 do artigo 170.º do Código da Estrada." />
+    </head>
+    <body>
+        <div id="body">
+            <h1>Formulário Para Denúncia de Contraordenação</h1>
+            Este formulário permite gerar um ficheiro PDF a partir dos dados inseridos. O ficheiro PDF gerado pode ser assinado digitalmente (recomendado) e enviado para as autoridades de forma a que o infrator seja autuado, tal como estipulado pelo <a target="_blank" href="http://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?artigo_id=349A0170&nid=349&tabela=leis&pagina=1&ficha=1&so_miolo=&nversao=#artigo">n.º 5 do artigo 170.º do Código da Estrada</a>:
+            <quotebox>
+                Artigo 170.º<br>
+                Auto de notícia e de denúncia<br>
+                5 - A autoridade ou agente de autoridade que tiver notícia, por denúncia ou conhecimento próprio, de contraordenação que deva conhecer levanta auto, a que é correspondentemente aplicável o disposto nos n.os 1 e 2, com as necessárias adaptações.
+            </quotebox>
+            Atualmente são suportadas denúncias de estacionamento indevido, denúncias de ultrapassagens irregulares e denúncias de não paragem nas passadeiras para peões ou velocípedes.
+            <div id="inputs">
+                <div class="separator">Dados do Denunciante</div>
+                <label><span>Nome Completo:</span> <input type="text" id="fullName" data-set class="longInput" /></label>
+                <label>
+                    <span>Tipo Identificação:</span>
+                    <select id="idType" data-set>
+                        <option>Cartão de Cidadão</option>
+                        <option>Bilhete de Identidade</option>
+                    </select>
+                </label>
+                <label><span>Número Identificação:</span> <input type="number" id="idNumber" data-set /></label>
+                <label><span>Morada de Residência:</span> <input type="text" id="residence" data-set class="longInput" placeholder="Rua... Cidade..." /></label>
+                <div class="separator">Dados do Infrator</div>
+                <label><span>Matrícula:</span> <input type="text" id="plate" data-set placeholder="XX-XX-XX" /></label>
+                <label><span>Marca:</span> <input type="text" id="make" data-set placeholder="Ex.: Opel" /></label>
+                <label><span>Modelo:</span> <input type="text" id="model" data-set placeholder="Ex.: Corsa" /></label>
+                <label><span>Data:</span> <input type="date" id="date" data-set /></label>
+                <label><span>Hora:</span> <input type="time" id="time" data-set /></label>
+                <label><span>Localidade:</span> <input type="text" id="locality" data-set /></label>
+                <label><span>Morada:</span> <input type="text" id="addressName" data-set class="longInput" placeholder="Rua..." /></label>
+                <label><span>N.º Porta:</span> <input type="text" id="addressNumber" data-set /></label>
+                <label><span>Infração:</span> <span><select id="infractionsType" data-set></select><br><select id="infractions" data-set></select></span></label>
+                <label><span>Autoridade:</span><select id="authority" data-set></select></label>
+                <label><span>Fotografias:</span> <button onclick="document.getElementById('fileUpload').click()">Adicionar Fotografia</button></label>
+                <input type="file" id="fileUpload" style="display: none" />
+                <div id="images"></div>
+            </div>
+            <div class="separator">Texto da Denúncia</div>
+            <p><textarea id="textContainer"></textarea></p>
+            <p id="buttons">
+                <a href="javascript:" id="downloadPDF" target="_blank" download><button>1. Transferir PDF</button></a>
+                <a href="https://frtend.reg.cmd.autenticacao.gov.pt/Ama.Registry.Frontend/Processes/DigitalSignature/DocumentSigning.aspx" target="_blank"><button>2. Assinar PDF</button></a>
+                <a href="mailto:" id="sendMail" target="_blank"><button>3. Enviar E-Mail</button></a>
+            </p>
+            <div>Caso o botão "Enviar E-Mail" não funcione, envie o e-mail para <a id="emailAddress"></a> com o PDF assinado digitalmente em anexo.</div>
+            <br>
+            <div><label><input type="checkbox" id="previewPDF" data-set /> Pré-visualizar PDF (não aconselhável em dispositivos móveis)</label></div>
+        </div>
+        <embed id="pdf" class="pdfobject" src="" type="application/pdf" internalinstanceid="14">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+        <script src="arial-normal.js"></script>
+        <script src="psp.js" charset="UTF-8"></script>
+        <script src="gnr.js" charset="UTF-8"></script>
+        <script src="pm.js" charset="UTF-8"></script>
+        <script src="infractions.js" charset="UTF-8"></script>
+        <script src="script.js" charset="UTF-8"></script>
+    </body>
+</html>

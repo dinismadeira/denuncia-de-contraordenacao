@@ -1,0 +1,91 @@
+body {
+    background-color: #5a5f64;
+    margin: 0;
+    text-align: center;
+    color: #26262a;
+}
+body, input, select, textarea {
+    font-size: 14px;
+    font-family: Helvetica, sans-serif;
+    height: 24px;
+}
+input[type="checkbox"] {
+    height: initial;
+}
+#inputs > label {
+    display: block;
+    margin: 3px;
+    font-weight: bold;
+}
+#inputs > label > span {
+    min-width: 155px;
+    display: inline-block
+}
+textarea {
+    width: 90%;
+    max-width: 640px;
+    height: 300px;
+    padding: 6px;
+}
+embed {
+    overflow: auto;
+    width: 80%;
+    height: 95vh;
+    text-align: center;
+    margin: 10px;
+    border: solid 1px #cecece;
+    box-shadow: 3px 3px 5px #0000009e;
+}
+#plate {
+    text-transform: uppercase;
+}
+.longInput {
+    width: 400px;
+}
+#images > img {
+    margin: 10px;
+    max-width: 125px;
+    max-height: 125px;
+    cursor: pointer;
+}
+#buttons button {
+    font-size: 18px;
+    width: 160px;
+    height: 50px;
+    background-color: #3034be;
+    color: white;
+    border: solid 1px #000;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#buttons button:hover {
+    background-color: #6a6eff;
+}
+p {
+    text-align: center;
+}
+#body {
+    width: 700px;
+    margin: auto;
+    background-color: #cecece;
+    padding: 10px;
+    text-align: initial;
+    box-shadow: 3px 3px 5px #0000009e;
+}
+h1 {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.separator {
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
+quotebox {
+    font-size: smaller;
+    font-style: italic;
+    padding: 10px;
+    display: block;
+}
